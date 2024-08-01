@@ -9,13 +9,25 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "eslint": "8.x",
     "expo": "~51.0.24",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
-    "react-native": "0.74.3"
+    "react-native": "0.74.3",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@eslint/js": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^7.0.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-native": "^4.1.0",
+    "globals": "^15.9.0",
+    "prettier": "3.3.3"
   },
   "private": true
 }
