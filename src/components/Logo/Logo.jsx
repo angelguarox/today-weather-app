@@ -28,6 +28,7 @@ export default function Logo({
 						height: moderateScale(heightImage),
 					},
 				]}
+				alt='Logo-Today!'
 			/>
 		</View>
 	);

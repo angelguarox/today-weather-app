@@ -4,13 +4,13 @@ import { moderateScale } from 'react-native-size-matters';
 const styles = StyleSheet.create({
 	footerContainer: {
 		width: '100%',
-		height: '6%',
+		height: moderateScale(45),
 		backgroundColor: '#fff',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		/* position: 'absolute',
-		bottom: 0, */
+		position: 'absolute',
+		bottom: 0,
 	},
 	unitsContainer: {
 		width: '80%',
