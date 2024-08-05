@@ -1,3 +1,4 @@
+// context/AppContext.js
 import React, { createContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -6,6 +7,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
 	const [personalInfo, setPersonalInfo] = useState(null);
 	const [lastWeather, setLastWeather] = useState(null);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const loadPersonalInfo = async () => {
@@ -13,6 +15,7 @@ export const AppProvider = ({ children }) => {
 			if (storedPersonalInfo) {
 				setPersonalInfo(JSON.parse(storedPersonalInfo));
 			}
+			setIsLoading(false);
 		};
 
 		const loadLastWeather = async () => {
@@ -38,7 +41,13 @@ export const AppProvider = ({ children }) => {
 
 	return (
 		<AppContext.Provider
-			value={{ personalInfo, lastWeather, savePersonalInfo, saveLastWeather }}
+			value={{
+				personalInfo,
+				lastWeather,
+				savePersonalInfo,
+				saveLastWeather,
+				isLoading,
+			}}
 		>
 			{children}
 		</AppContext.Provider>

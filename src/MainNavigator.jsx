@@ -1,25 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import PersonalInfo from './screens/PersonalInfo';
-import Weather from './screens/Weather';
+import { AppContext } from './context/AppContext.jsx';
+import PersonalInfo from './screens/PersonalInfo.jsx';
+import Weather from './screens/Weather.jsx';
 
 const Stack = createStackNavigator();
 
 export default function MainNavigator() {
-	const [isFirstLaunch, setIsFirstLaunch] = useState(null);
+	const { personalInfo, isLoading } = useContext(AppContext);
+	const isFirstLaunch = personalInfo === null;
 
-	useEffect(() => {
-		const checkFirstLaunch = async () => {
-			const storedPersonalInfo = await AsyncStorage.getItem('personalInfo');
-			setIsFirstLaunch(storedPersonalInfo === null);
-		};
-
-		checkFirstLaunch();
-	}, []);
-
-	if (isFirstLaunch === null) {
+	if (isLoading) {
 		return (
 			<View style={styles.loadingContainer}>
 				<ActivityIndicator size='large' color='#ea6e4b' />
