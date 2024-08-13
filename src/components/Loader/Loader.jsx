@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { View, StyleSheet, Animated } from 'react-native';
+import { moderateScale } from 'react-native-size-matters';
 
 const logoImage = require('../../../assets/img/adaptive-icon.png');
 
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
 	logo: {
-		width: 450,
-		height: 450,
+		width: moderateScale(450),
+		height: moderateScale(450),
 		resizeMode: 'contain',
 	},
 });
