@@ -9,13 +9,13 @@ import {
 import Emoji from 'react-native-emoji';
 import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 import Toast from 'react-native-toast-message';
-import Logo from '../components/Logo/Logo.jsx';
-import { AppContext } from '../context/AppContext.jsx';
-import CustomInputField from '../components/CustomInputField/CustomInputField.jsx';
-import CustomSelectField from '../components/CustomSelectField/CustomSelectField.jsx';
-import GenderModal from '../components/GenderModal/GenderModal.jsx';
-import Footer from '../components/Footer/Footer.jsx';
-import validationSchema from '../utils/formValidation.js';
+import Logo from '../../components/Logo/Logo.jsx';
+import { AppContext } from '../../context/AppContext.jsx';
+import CustomInputField from '../../components/CustomInputField/CustomInputField.jsx';
+import CustomSelectField from '../../components/CustomSelectField/CustomSelectField.jsx';
+import GenderModal from '../../components/GenderModal/GenderModal.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import validationSchema from '../../utils/formValidation.js';
 import styles from './PersonalInfo.styles.js';
 
 const initialValues = {

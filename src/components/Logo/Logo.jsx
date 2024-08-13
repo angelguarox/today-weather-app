@@ -20,7 +20,7 @@ export default function Logo({
 			]}
 		>
 			<Image
-				source={require('../../../assets/logo.png')}
+				source={require('../../../assets/img/logo.png')}
 				style={[
 					styles.logo,
 					{

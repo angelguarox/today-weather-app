@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AppContext } from './context/AppContext.jsx';
-import PersonalInfo from './screens/PersonalInfo.jsx';
-import Weather from './screens/Weather.jsx';
+import PersonalInfo from './screens/PersonalInfo/PersonalInfo.jsx';
+import Weather from './screens/Weather/Weather.jsx';
+import Loader from './components/Loader/Loader.jsx';
 
 const Stack = createStackNavigator();
 
@@ -12,11 +13,7 @@ export default function MainNavigator() {
 	const isFirstLaunch = personalInfo === null;
 
 	if (isLoading) {
-		return (
-			<View style={styles.loadingContainer}>
-				<ActivityIndicator size='large' color='#ea6e4b' />
-			</View>
-		);
+		return <Loader />;
 	}
 
 	return (
@@ -29,11 +26,3 @@ export default function MainNavigator() {
 		</Stack.Navigator>
 	);
 }
-
-const styles = StyleSheet.create({
-	loadingContainer: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-});
